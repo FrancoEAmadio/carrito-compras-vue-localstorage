@@ -1,0 +1,81 @@
+/* Estilos de la página */
+body { 
+    background-color: #f1f3f5; 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* Diseño del menu lateral del carrito */
+.cart-sidebar {
+    position: fixed;
+    top: 70px; right: 20px;
+    width: 310px;
+    max-height: 85vh;
+    background: white;
+    z-index: 2000;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    
+    /* Arranca fuera de la pantalla (costado derecho) */
+    transform: translateX(120%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clase que aplica Vue cuando mostrarCarrito es true */
+.cart-sidebar.open { transform: translateX(0); }
+
+.cart-body { overflow-y: auto; }
+
+/* Miniaturas para el carrito */
+.img-mini { width: 45px; height: 45px; object-fit: contain; border-radius: 4px; background: #fff; border: 1px solid #eee; flex-shrink: 0; }
+.mini-text { font-size: 0.7rem; font-weight: 700; line-height: 1.2; white-space: normal; }
+
+/* Fondo semitransparente que bloquea el resto de la web */
+.cart-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 1500;
+}
+/* Linea debajo del header */
+.navbar { border-bottom: 4px solid #ffc107; }
+
+/* Efectos visuales para las cards de productos */
+.card { transition: all 0.3s ease; border-radius: 12px; border: none; }
+.card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important; 
+}
+
+/*fondo tarjeta de productos */
+.card-img-top { height: 160px; object-fit: contain; background-color: #fff; padding: 15px; }
+
+/* Para que todos los títulos de las cards midan lo mismo aunque el nombre sea largo */
+.card-title { 
+    font-size: 0.85rem; 
+    min-height: 3.5rem; 
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* especificaciones*/
+.xsmall { font-size: 0.75rem; line-height: 1.2; margin-bottom: 1rem; }
+.btn-warning { font-weight: bold; }
+
+/* Estilo personalizado para el logo del local */
+.navbar-brand {
+    color: #ffc107 !important; 
+    transition: color 0.3s ease; 
+}
+
+/*color franco hardware onclick*/
+.navbar-brand:hover {
+    color: #ffc107 !important;
+    opacity: 0.8; 
+}
